@@ -1,0 +1,7 @@
+*.lock
+*.ini
+.vscode/
+.idea/
+__pycache__
+.env
+.DS_Store
