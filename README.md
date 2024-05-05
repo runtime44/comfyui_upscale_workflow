@@ -65,18 +65,6 @@ If you feel like there are too much added elements to your image, feel free to i
 ### Second Sampling
 Here, we use two sampling passes:
 1. Medium denoise, low ControlNet, adding noise, returning with noise
-2. Low denoise, no ControlNet, no noise addition, returning without nois (in our case using SD 1.5), and the second sampling is used as a refiner and fixes all the issues generated at the previous step, while using it as a starting point
-
-### First Sampling
-In this workflow, we are making use of masks to separate persons from their environment (it would work similarly with anything that you can segment in an image). This allows for more control over the amount of details that we want to generate on the image.
-For that, we use the [Mask Sampler](https://github.com/runtime44/comfyui_r44_nodes) with the two main inputs being the latent image and the mask.
-
-Because this step aims to generate as many details as possible from the upscaled image, we use a heavy ControlNet strength to contain SD hallucinations.
-If you feel like there are too much added elements to your image, feel free to increase that value
-
-### Second Sampling
-Here, we use two sampling passes:
-1. Medium denoise, low ControlNet, adding noise, returning with noise
 2. Low denoise, no ControlNet, no noise addition, returning without noise
 
 During these two passes, the sampler also changes.
