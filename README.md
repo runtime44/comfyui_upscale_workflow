@@ -9,7 +9,12 @@
 </p>
 
 > [!NOTE]
-> This workflow is partially adapted to ComfyUI, therefore the results might be different from those that you can expect on [Runtime44 - Mage](https://runtime44.com/mage)
+> This workflow is a partial adaptation to ComfyUI, therefore the results might be different from those that you can expect on [Runtime44 - Mage](https://runtime44.com/mage)
+
+## Preamble
+
+Both this workflow, and [Mage](https://runtime44.com/mage), aims to generate the highest quality image, whilst remaining faithful to the original image.
+Although the goal is the same, the execution is different, hence why you will most likely have different results between this and [Mage](https://runtime44.com/mage), the latter being optimized to run some processes in parallel on multiple GPUs and a different diffusion pipeline.
 
 ## Dependencies
 - [Runtime44 ComfyUI Nodes](https://github.com/runtime44/comfyui_r44_nodes) `git clone https://github.com/runtime44/comfyui_r44_nodes.git`
