@@ -52,8 +52,40 @@ You can find more models on [OpenModelDB](https://openmodeldb.info)
 - SD1.5 Tile
 - SDXL Tile _(optional)_
 
+## Process
+This workflow applies the principles of _double sampling_, where the first sampling is exaggerated to generate an image with a lot of noise and added elements (in our case using SD 1.5), and the second sampling is used as a refiner and fixes all the issues generated at the previous step, while using it as a starting point
+
+### First Sampling
+In this workflow, we are making use of masks to separate persons from their environment (it would work similarly with anything that you can segment in an image). This allows for more control over the amount of details that we want to generate on the image.
+For that, we use the [Mask Sampler](https://github.com/runtime44/comfyui_r44_nodes) with the two main inputs being the latent image and the mask.
+
+Because this step aims to generate as many details as possible from the upscaled image, we use a heavy ControlNet strength to contain SD hallucinations.
+If you feel like there are too much added elements to your image, feel free to increase that value
+
+### Second Sampling
+Here, we use two sampling passes:
+1. Medium denoise, low ControlNet, adding noise, returning with noise
+2. Low denoise, no ControlNet, no noise addition, returning without nois (in our case using SD 1.5), and the second sampling is used as a refiner and fixes all the issues generated at the previous step, while using it as a starting point
+
+### First Sampling
+In this workflow, we are making use of masks to separate persons from their environment (it would work similarly with anything that you can segment in an image). This allows for more control over the amount of details that we want to generate on the image.
+For that, we use the [Mask Sampler](https://github.com/runtime44/comfyui_r44_nodes) with the two main inputs being the latent image and the mask.
+
+Because this step aims to generate as many details as possible from the upscaled image, we use a heavy ControlNet strength to contain SD hallucinations.
+If you feel like there are too much added elements to your image, feel free to increase that value
+
+### Second Sampling
+Here, we use two sampling passes:
+1. Medium denoise, low ControlNet, adding noise, returning with noise
+2. Low denoise, no ControlNet, no noise addition, returning without noise
+
+During these two passes, the sampler also changes.
+
+### Last details
+Finally, we apply the last details to our image, this is where you can use the [Image Enhance](https://github.com/runtime44/comfyui_r44_nodes) node, or the [Color Match](https://github.com/runtime44/comfyui_r44_nodes) _(recommended)_ to add the finishing touches to your image
+
 ## License
-This workflow is distributed under the [GNU AGPLv3](./LICENSE.md) license
+This workflow is distributed under the [GNU AGPLv3](./LICENSE.md) license to generate an image with a lot of noise and added elements
 
 ## Credits
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
