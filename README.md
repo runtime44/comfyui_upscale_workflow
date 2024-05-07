@@ -23,6 +23,7 @@ Although the goal is the same, the execution is different, hence why you will mo
 - [Comfyroll Studio](https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes) `git clone https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git`
 - [ComfyUI Custom Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts) `git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git`
 - [ComfyUI ControlNet Auxiliary Preprocessors](https://github.com/Fannovel16/comfyui_controlnet_aux) `git clone https://github.com/Fannovel16/comfyui_controlnet_aux.git`
+- [ComfyUI KJNodes](https://github.com/kijai/ComfyUI-KJNodes) `git clone https://github.com/kijai/ComfyUI-KJNodes.git`
 
 To install these dependencies, you have two options:
 1. Using [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) _(recommended)_
